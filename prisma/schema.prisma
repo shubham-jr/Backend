@@ -1,0 +1,68 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  email   String   @unique
+  full_name    String
+  company_name    String   
+  contact_number String
+  password String
+  country_code String
+  checkbox Boolean
+}
+
+model Otp {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+    otp String
+    user_id String @db.ObjectId
+  }
+model Job {
+    id      String   @id @default(auto()) @map("_id") @db.ObjectId
+    user_id String  @db.ObjectId 
+    job_title String
+    select_department String
+    select_branch String
+    city String 
+    job_type String 
+    Salary_type String
+    Salary Int
+    date DateTime
+    status Boolean @default(true)
+    job_description String
+    number_of_applicants Int @default(0)
+  }
+
+model Free_text {
+    id      String   @id @default(auto()) @map("_id") @db.ObjectId
+    optional Boolean @default(false)
+    question  String
+    job_id String @db.ObjectId
+
+  }
+model Single_choice {
+    id      String   @id @default(auto()) @map("_id") @db.ObjectId
+    optional Boolean @default(false)
+    question String
+    option String[]
+    job_id String @db.ObjectId
+
+    }
+model Multiple_choice {
+    id      String   @id @default(auto()) @map("_id") @db.ObjectId
+    optional Boolean @default(false)
+    question String
+    option String[]
+   job_id String @db.ObjectId
+
+  }
