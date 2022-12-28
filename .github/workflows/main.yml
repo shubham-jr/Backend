@@ -22,4 +22,5 @@ jobs:
                git pull origin main
                cd Backend/
                yarn
+               pm2 delete server
                pm2 start server.js
