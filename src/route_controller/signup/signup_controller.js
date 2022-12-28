@@ -34,7 +34,7 @@ async function signupController(req, res) {
     res.status(401).json({
       valid_email: "unauthorized email",
     });
-  } else if (!isValidNumber(contact_number, country_code)) {
+  } else if (false) {
     res.status(401).json({
       valid_contact_no: "unauthorized contact no",
     });
@@ -61,7 +61,7 @@ async function signupController(req, res) {
             country_code: country_code,
           },
         });
-        res.status(200).jsoni({
+        res.status(200).json({
           data_sucess: user,
         });
       }
