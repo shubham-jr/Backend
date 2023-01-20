@@ -1,5 +1,6 @@
 const express = require("express");
 const requirmentRoute = express.Router();
+const auth = require('../../middlewares/auth')
 // controller
 const {
   requirementController,
@@ -13,7 +14,7 @@ const {
   multipleChoiceUpdate,
 } = require("./requirment_controller.js");
 
-requirmentRoute.post("/job", requirementController);
+requirmentRoute.post("/job", auth , requirementController);
 requirmentRoute.post("/job/freetext/:id([0-9a-fA-F]{24})", freeTextController);
 requirmentRoute.post(
   "/job/multichoice/:id([0-9a-fA-F]{24})",
