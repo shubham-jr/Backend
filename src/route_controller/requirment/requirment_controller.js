@@ -10,24 +10,18 @@ async function requirementController(req, res) {
     select_branch,
     job_description,
     job_type,
-    salary_type,
-    salary,
+    Salary_type,
+    Salary,
     status,
     city,
     user_id,
   } = req.body;
-  if (!user_id) {
-    res.status(400).json({
-      user_id_missing: "user id is missing",
-    });
-  } else if (
+   if (
     !job_title ||
-    !select_branch ||
-    !select_department ||
     !job_description ||
     !job_type ||
-    !salary_type ||
-    !salary ||
+    !Salary_type ||
+    !Salary ||
     !city
   ) {
     res.status(401).json({
@@ -41,11 +35,11 @@ async function requirementController(req, res) {
         select_branch: select_branch,
         job_description: job_description,
         job_type: job_type,
-        Salary_type: salary_type,
-        Salary: salary,
+        Salary_type: Salary_type,
+        Salary: Salary,
         status: status,
         city: city,
-        user_id: user_id,
+        user_id: req.user.id,
       },
     });
     res.status(200).json({
@@ -60,10 +54,10 @@ async function requirementController(req, res) {
         select_branch: select_branch,
         job_description: job_description,
         job_type: job_type,
-        Salary_type: salary_type,
-        Salary: salary,
+        Salary_type: Salary_type,
+        Salary: Salary,
         city: city,
-        user_id: user_id,
+        user_id: req.user.id,
       },
     });
     res.status(200).json({
@@ -93,29 +87,13 @@ async function freeTextController(req, res) {
   } else {
     if (job_id) {
       const { optional, question } = req.body;
-      if (!question) {
-        res.status(400).json({
-          enter_all_field: "enter all the fields",
-        });
-      } else {
-        if (optional == false) {
-          const free_text_data = await Prisma.free_text.create({
-            data: {
-              job_id: job_id,
-              optional: optional,
-              question: question,
-            },
-          });
-          res.status(200).json({
-            free_text_data_enter_sucessfully:
-              "free text data enter scusselfully",
-            data: free_text_data,
-          });
-        } else {
+      
+  
           const free_text_data = await Prisma.free_text.create({
             data: {
               job_id: job_id,
               question: question,
+              user_id:req.user.id
             },
           });
           res.status(200).json({
@@ -125,8 +103,8 @@ async function freeTextController(req, res) {
         }
       }
     }
-  }
-}
+  
+
 //// single choice route depended upon inital route of job route
 //
 //
@@ -147,31 +125,14 @@ async function singleChoiceController(req, res) {
   } else {
     if (job_id) {
       const { optional, question, option } = req.body;
-      if (!question || !option) {
-        res.status(400).json({
-          enter_all_field: "enter all the fields",
-        });
-      } else {
-        if (optional == true) {
-          const single_choice_data = await Prisma.single_choice.create({
-            data: {
-              job_id: job_id,
-              optional: optional,
-              question: question,
-              option: option,
-            },
-          });
-          res.status(200).json({
-            single_choice_data_enter_sucessfully:
-              "single choice data enter scusselfully",
-            data: single_choice_data,
-          });
-        } else {
+     
+        
           const single_choice_data = await Prisma.single_choice.create({
             data: {
               job_id: job_id,
               question: question,
               option: option,
+              user_id:req.user.id
             },
           });
           res.status(200).json({
@@ -181,8 +142,8 @@ async function singleChoiceController(req, res) {
         }
       }
     }
-  }
-}
+  
+
 //// multiple choice route depended upon initial job route
 //
 //
@@ -204,31 +165,14 @@ async function multiChoiceController(req, res) {
   } else {
     if (job_id) {
       const { optional, question, option } = req.body;
-      if (!question || !option) {
-        res.status(400).json({
-          enter_all_field: "enter all the fields",
-        });
-      } else {
-        if (optional == true) {
-          const multiple_choice_data = await Prisma.multiple_choice.create({
-            data: {
-              job_id: job_id,
-              optional: optional,
-              question: question,
-              option: option,
-            },
-          });
-          res.status(200).json({
-            multi_choice_data_enter_sucessfully:
-              "multi choice data enter scusselfully",
-            data: multiple_choice_data,
-          });
-        } else {
+      
+       
           const multiple_choice_data = await Prisma.multiple_choice.create({
             data: {
               job_id: job_id,
               question: question,
               option: option,
+              user_id:req.user.id
             },
           });
           res.status(200).json({
@@ -239,8 +183,8 @@ async function multiChoiceController(req, res) {
         }
       }
     }
-  }
-}
+  
+
 /// delete the job route postion
 async function requirementDelete(req, res) {
   var id = req.params.id;

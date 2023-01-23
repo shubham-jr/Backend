@@ -1,8 +1,7 @@
 // This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["multiSchema"]
 }
 
@@ -12,57 +11,108 @@ datasource db {
 }
 
 model User {
-  id      String   @id @default(auto()) @map("_id") @db.ObjectId
-  email   String   @unique
-  full_name    String
-  company_name    String   
+  id             String  @id @default(auto()) @map("_id") @db.ObjectId
+  email          String  @unique
+  full_name      String
+  company_name   String
   contact_number String
-  password String
-  country_code String
-  checkbox Boolean
+  password       String
+  country_code   String
+  checkbox       Boolean
 }
 
 model Otp {
-    id String @id @default(auto()) @map("_id") @db.ObjectId
-    otp String
-    user_id String @db.ObjectId
-  }
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  otp     String
+  user_id String @db.ObjectId
+}
+
 model Job {
-    id      String   @id @default(auto()) @map("_id") @db.ObjectId
-    user_id String?  @db.ObjectId 
-    job_title String?
-    select_department String?
-    select_branch String?
-    city String?
-    job_type String? 
-    Salary_type String?
-    Salary String?
-    date DateTime?
-    status Boolean? @default(true)
-    job_description String?
-    number_of_applicants Int? @default(0)
-  }
+  id                   String    @id @default(auto()) @map("_id") @db.ObjectId
+  user_id              String   @db.ObjectId
+  job_title            String?
+  city                 String?
+  job_type             String?
+  Salary_type          String?
+  Salary               String?
+  date                 String?
+  status               Boolean?  @default(true)
+  job_description      String?
+  number_of_applicants Int?      @default(0)
+}
 
 model Free_text {
-    id      String   @id @default(auto()) @map("_id") @db.ObjectId
-    optional Boolean @default(false)
-    question  String
-    job_id String @db.ObjectId
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  question String?
+  job_id   String? @db.ObjectId
+  user_id  String? @db.ObjectId
+}
 
-  }
 model Single_choice {
-    id      String   @id @default(auto()) @map("_id") @db.ObjectId
-    optional Boolean @default(false)
-    question String
-    option String[]
-    job_id String @db.ObjectId
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  question String?
+  option   String[]
+  job_id   String?   @db.ObjectId
+  user_id String? @db.ObjectId
+}
 
-    }
 model Multiple_choice {
-    id      String   @id @default(auto()) @map("_id") @db.ObjectId
-    optional Boolean @default(false)
-    question String
-    option String[]
-   job_id String @db.ObjectId
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  question String?
+  option   String[]
+  job_id   String?   @db.ObjectId
+  user_id String? @db.ObjectId
+}
 
-  }
+model employee {
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  user             String @db.ObjectId
+  empName          String
+  empEmail         String
+  empPhone         String
+  empAddress       String
+  empPhoto         String?
+  empPdf           String?
+  empEduDegree     String
+  empDegreeDate    String
+  empdatebirth     String
+  title            String
+  Department       String
+  Branch           String
+  PayrollGroup     String
+  jobType          String
+  Visa             String
+  VisaExpiry       String
+  AvailWorkingDays String
+  emergencyName    String
+  relationship     String
+  emergencyMobile  String
+  positionTitle    String
+  companyName      String
+  workFrom         String
+  workTo           String
+  Salary           String
+  Salary_type      String
+}
+
+enum Role {
+  Annual
+  Sick
+  Unpaid
+}
+
+model schdeule {
+  id             String  @id @default(auto()) @map("_id") @db.ObjectId
+  user           String  @db.ObjectId
+  employee       String  @db.ObjectId
+  day            String
+  date           String
+  from           String?
+  to             String?
+  break_time     String?
+  shift_length   String?
+  avg_daily      String?
+  avg_daily_cost String?
+  shiftcost      String?
+  leave          Role?
+}

@@ -15,30 +15,30 @@ const {
 } = require("./requirment_controller.js");
 
 requirmentRoute.post("/job", auth , requirementController);
-requirmentRoute.post("/job/freetext/:id([0-9a-fA-F]{24})", freeTextController);
+requirmentRoute.post("/job/freetext/:id([0-9a-fA-F]{24})", auth ,freeTextController);
 requirmentRoute.post(
-  "/job/multichoice/:id([0-9a-fA-F]{24})",
+  "/job/multichoice/:id([0-9a-fA-F]{24})",auth,
   multiChoiceController
 );
 requirmentRoute.post(
-  "/job/singlechoice/:id([0-9a-fA-F]{24})",
+  "/job/singlechoice/:id([0-9a-fA-F]{24})",auth,
   singleChoiceController
 );
 requirmentRoute.delete("/job/delete/:id([0-9a-fA-F]{24})", requirementDelete);
 requirmentRoute.put(
-  "/job/delete/:id([0-9a-fA-F]{24})",
+  "/job/delete/:id([0-9a-fA-F]{24})",auth,
   requiermentsRouterUpdate
 );
 requirmentRoute.put(
-  "/job/free_text_update/:jobid([0-9a-fA-F]{24})/:freetextid([0-9a-fA-F]{24})",
+  "/job/free_text_update/:jobid([0-9a-fA-F]{24})/:freetextid([0-9a-fA-F]{24})",auth,
   freeTextUpdate
 );
 requirmentRoute.put(
-  "/job/single_choice_update/:jobid([0-9a-fA-F]{24})/:singlechoiceid([0-9a-fA-F]{24})",
+  "/job/single_choice_update/:jobid([0-9a-fA-F]{24})/:singlechoiceid([0-9a-fA-F]{24})",auth,
   singleChoiceUpdate
 );
 requirmentRoute.put(
-  "/job/multiple_choice_update/:jobid([0-9a-fA-F]{24})/:multiplechoiceid([0-9a-fA-F]{24})",
+  "/job/multiple_choice_update/:jobid([0-9a-fA-F]{24})/:multiplechoiceid([0-9a-fA-F]{24})",auth,
   multipleChoiceUpdate
 );
 
