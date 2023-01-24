@@ -66,7 +66,18 @@ async function requirementController(req, res) {
     });
   }
 }
-
+async function getjobcontroller(req,res){
+  try{
+  const data = await Prisma.job.findMany()
+  res.status(200).json({
+    data:data
+ })
+  }catch(err){
+    res.status(500).json({
+       data:"data not found error"
+    })
+  }
+}
 /// free text controller depended upon job initial route
 //
 //
@@ -630,4 +641,5 @@ module.exports = {
   freeTextUpdate,
   singleChoiceUpdate,
   multipleChoiceUpdate,
+  getjobcontroller
 };

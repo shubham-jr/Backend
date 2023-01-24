@@ -12,12 +12,13 @@ const {
   freeTextUpdate,
   singleChoiceUpdate,
   multipleChoiceUpdate,
+  getjobcontroller
 } = require("./requirment_controller.js");
 
 requirmentRoute.post("/job", auth , requirementController);
 requirmentRoute.post("/job/freetext/:id([0-9a-fA-F]{24})", auth ,freeTextController);
 requirmentRoute.post(
-  "/job/multichoice/:id([0-9a-fA-F]{24})",auth,
+  "/job/  /:id([0-9a-fA-F]{24})",auth,
   multiChoiceController
 );
 requirmentRoute.post(
@@ -41,5 +42,6 @@ requirmentRoute.put(
   "/job/multiple_choice_update/:jobid([0-9a-fA-F]{24})/:multiplechoiceid([0-9a-fA-F]{24})",auth,
   multipleChoiceUpdate
 );
+requirmentRoute.get('/job',getjobcontroller)
 
 module.exports = requirmentRoute;
