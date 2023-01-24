@@ -3,6 +3,7 @@ const employee_Route = express.Router();
 const auth = require("../../middlewares/auth");
 const { createEmp } = require("./controller/createEmp_controller.js");
 const { uploadfile } = require("./controller/uploadfile_controller");
+const {employee_get_controller} = require('./controller/employee_get_controller')
 const {fileUploadMiddleware} = require("../../middlewares/upload")
 employee_Route.post(
   "/createEmployee/:userId",auth,
@@ -21,7 +22,7 @@ employee_Route.post(
 //   updateEmployee
 // );
 
-// employee_Route.get("/getEmployees/:userId", getEmployeeByFilters);
+employee_Route.get("/getEmployees", employee_get_controller);
 
 // employee_Route.get(
 //   "/getEmployee/:userId/:empId",

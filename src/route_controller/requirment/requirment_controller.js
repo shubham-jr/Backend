@@ -73,8 +73,9 @@ async function getjobcontroller(req,res){
     data:data
  })
   }catch(err){
+    console.log(err)
     res.status(500).json({
-       data:"data not found error"
+       data:"data not found errorg"
     })
   }
 }
