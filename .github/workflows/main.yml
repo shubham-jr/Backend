@@ -21,4 +21,4 @@ jobs:
                cd ~/Backend
                git pull origin main
                yarn
-               pm2 restart server.js
+               pm2 restart server
