@@ -12,7 +12,6 @@ employee_Route.post(
 
 employee_Route.post(
   "/Employee/upload",
-  auth,
   fileUploadMiddleware,
   uploadfile
 );
