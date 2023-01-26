@@ -133,5 +133,5 @@ model Item {
   InStock           String
   valueInStock      String
   ItemCode          String
-  ItemPhoto         String
+  ItemPhoto         String?
 }

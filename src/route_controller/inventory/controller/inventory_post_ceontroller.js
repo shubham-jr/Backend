@@ -16,7 +16,8 @@ async function item_create(req, res) {
         PurchaseWith    : body.PurchaseWith, 
         PricePerPackage : body.PricePerPackage, 
         InStock     : body.InStock,     
-        valueInStock  : body.valueInStock,   
+        valueInStock  : body.valueInStock,
+        ItemCode :body.ItemCode
       },
     });
     return res.status(200).json({
