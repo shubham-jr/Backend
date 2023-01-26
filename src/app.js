@@ -17,6 +17,9 @@ app.use(
 //adding middleware
 app.use(parse.json());
 app.use(express.json());
+app.use(express.static("files"));
+app.use(express.static(__dirname));
+
 //including routes export
 const signupRoute = require("../src/route_controller/signup/signup_route");
 const loginRoute = require("../src/route_controller/login/login_route");
