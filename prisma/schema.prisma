@@ -132,4 +132,5 @@ model Item {
   PricePerPackage   String
   InStock           String
   valueInStock      String
+  ItemCode          String
 }
