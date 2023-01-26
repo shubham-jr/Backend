@@ -22,7 +22,7 @@ employee_Route.post(
 //   updateEmployee
 // );
 
-employee_Route.get("/getEmployees", employee_get_controller);
+employee_Route.get("/getEmployees", auth ,employee_get_controller);
 
 // employee_Route.get(
 //   "/getEmployee/:userId/:empId",

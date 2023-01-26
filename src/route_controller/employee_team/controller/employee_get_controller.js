@@ -1,7 +1,11 @@
 const Prisma = require("../../../../config/helper");
 async function employee_get_controller(req,res){
     try{
-    const data = await Prisma.employee.findMany()
+    const data = await Prisma.employee.findMany({
+      where:{
+        user:req.user.id
+      }
+    })
     res.status(200).json({
       data:data
    })

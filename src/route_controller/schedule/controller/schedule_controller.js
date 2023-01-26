@@ -4,11 +4,12 @@ async function schedule_post(req, res) {
   try {
     if (!body.day || !body.date) {
       return res.status(500).json({
-        mesagge: "enter date and date",
+        mesagge: "enter date and day",
       });
     }
     const data = await Prisma.schdeule.create({
       data: {
+        employee:body.employee,
         user: req.user.id,
         day: body.day,
         date: body.date,
