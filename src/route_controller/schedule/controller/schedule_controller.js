@@ -9,14 +9,14 @@ async function schedule_post(req, res) {
     }
     const data = await Prisma.schdeule.create({
       data: {
-        employee:body.employee,
+        employee:req.params.empid,
         user: req.user.id,
         day: body.day,
         date: body.date,
         from: body.from,
         to: body.to,
         break_time: body.break_time,
-        shift_length: body.to - body.from,
+        shift_length: isNaN(body.to- body.from)?" ":body.to-body.from,
         avg_daily: "",
         avg_daily_cost: "",
         shiftcost: body.shiftcost,

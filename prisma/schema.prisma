@@ -114,7 +114,7 @@ model schdeule {
   avg_daily      String?
   avg_daily_cost String?
   shiftcost      String?
-  leave          Role?
+  leave          String?
 }
 
 model Item {
