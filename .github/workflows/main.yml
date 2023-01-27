@@ -21,5 +21,6 @@ jobs:
                cd ~/Backend
                git pull origin main
                yarn
+               npx prisma generate
                pm2 restart server
                
