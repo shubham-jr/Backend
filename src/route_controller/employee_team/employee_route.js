@@ -5,6 +5,7 @@ const { createEmp } = require("./controller/createEmp_controller.js");
 const { uploadfile } = require("./controller/uploadfile_controller");
 const {employee_get_controller} = require('./controller/employee_get_controller')
 const {fileUploadMiddleware} = require("../../middlewares/upload")
+const {getEmployeeSingle} = require('./controller/employee_single_get_controller')
 employee_Route.post(
   "/createEmployee/:userId",auth,
   createEmp
@@ -22,6 +23,7 @@ employee_Route.post(
 // );
 
 employee_Route.get("/getEmployees", auth ,employee_get_controller);
+employee_Route.get("/getEmployees/:empid" ,getEmployeeSingle);
 
 // employee_Route.get(
 //   "/getEmployee/:userId/:empId",
