@@ -118,19 +118,18 @@ model schdeule {
 }
 
 model Item {
-  id                String @id @default(auto()) @map("_id") @db.ObjectId
-  user              String @db.ObjectId
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  user              String  @db.ObjectId
   ItemName          String
   Supplier          String
   InventoryCategory String
   Brand             String
-  productImage      String
   PackageType       String
   QtyPerPackage     String
   PurchaseWith      String
   PricePerPackage   String
-  PackageQty           String
-  GstType      String
+  PackageQty        String
+  GstType           String
   ItemCode          String
   ItemPhoto         String?
 }

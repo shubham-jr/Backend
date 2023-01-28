@@ -9,7 +9,7 @@ async function item_create(req, res) {
         Supplier  : body.Supplier,            
         InventoryCategory: body.InventoryCategory,
         Brand   : body.Brand,         
-        productImage  : body.productImage,   
+        ItemPhoto  : body.ItemPhoto,   
         PackageType  : body.PackageType,    
         QtyPerPackage  : body.QtyPerPackage,  
         PurchaseWith    : body.PurchaseWith, 
