@@ -6,8 +6,7 @@ async function item_create(req, res) {
       data: {          
         user  : req.user.id,          
         ItemName  : body.ItemName,      
-        Supplier  : body.Supplier,       
-        Branches  : body.Branches,       
+        Supplier  : body.Supplier,            
         InventoryCategory: body.InventoryCategory,
         Brand   : body.Brand,         
         productImage  : body.productImage,   
@@ -15,8 +14,8 @@ async function item_create(req, res) {
         QtyPerPackage  : body.QtyPerPackage,  
         PurchaseWith    : body.PurchaseWith, 
         PricePerPackage : body.PricePerPackage, 
-        InStock     : body.InStock,     
-        valueInStock  : body.valueInStock,
+        PackageQty     : body.PackageQty,     
+        GstType  : body.GstType,
         ItemCode :body.ItemCode
       },
     });

@@ -122,7 +122,6 @@ model Item {
   user              String @db.ObjectId
   ItemName          String
   Supplier          String
-  Branches          String
   InventoryCategory String
   Brand             String
   productImage      String
@@ -130,8 +129,8 @@ model Item {
   QtyPerPackage     String
   PurchaseWith      String
   PricePerPackage   String
-  InStock           String
-  valueInStock      String
+  PackageQty           String
+  GstType      String
   ItemCode          String
   ItemPhoto         String?
 }
