@@ -32,7 +32,7 @@ async function requirementController(req, res) {
       data: {
         job_title: job_title,
         select_department: select_department,
-        select_branch: select_branch,
+        Branch: select_branch,
         job_description: job_description,
         job_type: job_type,
         Salary_type: Salary_type,
@@ -51,7 +51,7 @@ async function requirementController(req, res) {
       data: {
         job_title: job_title,
         select_department: select_department,
-        select_branch: select_branch,
+        Branch: select_branch,
         job_description: job_description,
         job_type: job_type,
         Salary_type: Salary_type,

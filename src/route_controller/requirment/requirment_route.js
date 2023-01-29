@@ -18,7 +18,7 @@ const {
 requirmentRoute.post("/job", auth , requirementController);
 requirmentRoute.post("/job/freetext/:id([0-9a-fA-F]{24})", auth ,freeTextController);
 requirmentRoute.post(
-  "/job/  /:id([0-9a-fA-F]{24})",auth,
+  "/job/multichoice/:id([0-9a-fA-F]{24})",auth,
   multiChoiceController
 );
 requirmentRoute.post(
