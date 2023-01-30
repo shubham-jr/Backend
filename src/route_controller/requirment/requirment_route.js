@@ -44,6 +44,6 @@ requirmentRoute.put(
   multipleChoiceUpdate
 );
 requirmentRoute.get('/job',getjobcontroller)
-requirmentRoute.get('/job/question/:questionId',getAllQuestion)
+requirmentRoute.get('/job/question/',getAllQuestion)
 
 module.exports = requirmentRoute;

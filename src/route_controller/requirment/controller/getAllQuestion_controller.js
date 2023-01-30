@@ -3,21 +3,9 @@ async function getAllQuestion(req,res){
     const id = req.params.questionId;
     console.log(id)
     try{
-        const free = await Prisma.Free_text.findMany({
-            where:{
-                job_id : id
-            }
-        })
-        const singlechoice = await Prisma.Free_text.findMany({
-            where:{
-                job_id : id
-            }
-        })
-        const multiplechoice = await Prisma.Free_text.findMany({
-            where:{
-                job_id : id
-            }
-        })
+        const free = await Prisma.Free_text.findMany()
+        const singlechoice = await Prisma.Free_text.findMany()
+        const multiplechoice = await Prisma.Free_text.findMany()
         res.status(200).json({
             free : free,
             singlechoice :singlechoice,
