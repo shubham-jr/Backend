@@ -94,6 +94,7 @@ model employee {
   workTo           String[]
   Salary           Int
   Salary_type      String
+  Contract_type String
 }
 
 enum Role {

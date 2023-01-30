@@ -14,6 +14,7 @@ async function requirementController(req, res) {
     Salary,
     status,
     city,
+    Contract_type,
     user_id,
   } = req.body;
    if (
@@ -40,6 +41,7 @@ async function requirementController(req, res) {
         status: status,
         city: city,
         user_id: req.user.id,
+        Contract_type:Contract_type
       },
     });
     res.status(200).json({
@@ -58,6 +60,7 @@ async function requirementController(req, res) {
         Salary: Salary,
         city: city,
         user_id: req.user.id,
+        Contract_type:Contract_type
       },
     });
     res.status(200).json({
