@@ -8,13 +8,13 @@ const {
   multiChoiceController,
   singleChoiceController,
   requirementDelete,
-  requiermentsRouterUpdate,
   freeTextUpdate,
   singleChoiceUpdate,
   multipleChoiceUpdate,
   getjobcontroller
-} = require("./requirment_controller.js");
-const{getAllQuestion} =require('./getAllQuestion_controller')
+} = require("./controller/requirment_controller");
+const{getAllQuestion} =require('./controller/getAllQuestion_controller')
+const{requiermentsRouterUpdate} =require('./controller/updateJob_controller')
 
 requirmentRoute.post("/job", auth , requirementController);
 requirmentRoute.post("/job/freetext/:id([0-9a-fA-F]{24})", auth ,freeTextController);
@@ -28,7 +28,7 @@ requirmentRoute.post(
 );
 requirmentRoute.delete("/job/delete/:id([0-9a-fA-F]{24})", requirementDelete);
 requirmentRoute.put(
-  "/job/delete/:id([0-9a-fA-F]{24})",auth,
+  "/job/update/:id([0-9a-fA-F]{24})",
   requiermentsRouterUpdate
 );
 requirmentRoute.put(

@@ -1,4 +1,4 @@
-const Prisma = require("../../../config/helper.js");
+const Prisma = require("../../../../config/helper.js");
 var ObjectId = require("mongodb").ObjectId;
 var mongoose = require("mongoose");
 var data;
@@ -240,153 +240,6 @@ async function requirementDelete(req, res) {
 }
 
 /// now setupped the update route for every route
-async function requiermentsRouterUpdate(req, res) {
-  const {
-    job_title,
-    select_department,
-    select_branch,
-    job_description,
-    job_type,
-    salary_type,
-    salary,
-    status,
-    city,
-  } = req.body;
-  const job_id = req.params.id;
-  var count = 0;
-  if (!job_id) {
-    res.status(400).json({
-      user_id_not_found: "user id not found",
-    });
-  } else if (
-    !job_title &&
-    !select_branch &&
-    !select_department &&
-    !job_description &&
-    !job_type &&
-    !salary_type &&
-    !salary &&
-    !city
-  ) {
-    res.status(400).json({
-      enter_one_field_to_update: "enter one field to get updated",
-    });
-  } else {
-    const user = await Prisma.job.findUnique({
-      where: {
-        id: job_id,
-      },
-    });
-    if (!user) {
-      res.status(400).json({
-        no_job_found_with_id: "no job found with this id ",
-      });
-    } else {
-      if (job_title) {
-        await Prisma.job.update({
-          where: {
-            id: job_id,
-          },
-          data: {
-            job_title: job_title,
-          },
-        });
-        count++;
-      }
-
-      if (select_branch) {
-        await Prisma.job.update({
-          where: {
-            id: job_id,
-          },
-          data: {
-            select_branch: select_branch,
-          },
-        });
-        count++;
-      }
-
-      if (select_department) {
-        await Prisma.job.update({
-          where: {
-            id: job_id,
-          },
-          data: {
-            job_title: job_title,
-          },
-        });
-        count++;
-      }
-      if (job_type) {
-        await Prisma.job.update({
-          where: {
-            id: job_id,
-          },
-          data: {
-            job_title: job_type,
-          },
-        });
-        count++;
-      }
-
-      if (job_description) {
-        await Prisma.job.update({
-          where: {
-            id: job_id,
-          },
-          data: {
-            job_description: job_description,
-          },
-        });
-        count++;
-      }
-
-      if (salary_type) {
-        await Prisma.job.update({
-          where: {
-            id: job_id,
-          },
-          data: {
-            salary_type: salary_type,
-          },
-        });
-        count++;
-      }
-      if (salary) {
-        await Prisma.job.update({
-          where: {
-            id: job_id,
-          },
-          data: {
-            salary: salary,
-          },
-        });
-        count++;
-      }
-      if (city) {
-        await Prisma.job.update({
-          where: {
-            id: job_id,
-          },
-          data: {
-            city: city,
-          },
-        });
-        count++;
-      }
-
-      if (count > 0) {
-        res.status(400).json({
-          changes_done_on_number_fiels: count,
-        });
-      } else {
-        res.status(200).json({
-          no_changes_done: "no changes get done",
-        });
-      }
-    }
-  }
-}
 
 //// route for update path free text
 
@@ -638,7 +491,7 @@ module.exports = {
   singleChoiceController,
   multiChoiceController,
   requirementDelete,
-  requiermentsRouterUpdate,
+
   freeTextUpdate,
   singleChoiceUpdate,
   multipleChoiceUpdate,

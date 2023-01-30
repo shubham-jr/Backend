@@ -1,4 +1,4 @@
-const Prisma = require("../../../config/helper.js");
+const Prisma = require("../../../../config/helper");
 async function getAllQuestion(req,res){
     const id = req.params.questionId;
     console.log(id)
