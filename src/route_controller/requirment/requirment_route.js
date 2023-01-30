@@ -14,6 +14,7 @@ const {
   multipleChoiceUpdate,
   getjobcontroller
 } = require("./requirment_controller.js");
+const{getAllQuestion} =require('./getAllQuestion_controller')
 
 requirmentRoute.post("/job", auth , requirementController);
 requirmentRoute.post("/job/freetext/:id([0-9a-fA-F]{24})", auth ,freeTextController);
@@ -43,5 +44,6 @@ requirmentRoute.put(
   multipleChoiceUpdate
 );
 requirmentRoute.get('/job',getjobcontroller)
+requirmentRoute.get('/job/question/:questionId',getAllQuestion)
 
 module.exports = requirmentRoute;

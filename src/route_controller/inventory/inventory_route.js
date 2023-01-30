@@ -6,6 +6,6 @@ const {item_get} = require("./controller/inventory_get_controller")
 const {fileUploadMiddleware} = require("../../middlewares/upload")
 const  {uploadfile} = require("./controller/upload_controller")
 inventory_route.post('/inventory',auth ,item_create)
-inventory_route.get('/inventory',auth ,item_get)
+inventory_route.get('/',auth ,item_get)
 inventory_route.post('/inventory/upload',auth ,fileUploadMiddleware,uploadfile)
 module.exports  = inventory_route
