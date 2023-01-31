@@ -202,7 +202,6 @@ async function multiChoiceController(req, res) {
 
 /// delete the job route postion
 async function requirementDelete(req, res) {
-  var id = req.params.id;
   var job_id = req.params.id;
   console.log(job_id);
   if (job_id) {
@@ -218,12 +217,12 @@ async function requirementDelete(req, res) {
     });
     const singleChoice = await Prisma.single_choice.deleteMany({
       where: {
-        job_id: id,
+        job_id: job_id,
       },
     });
     const multipleChoice = await Prisma.multiple_choice.deleteMany({
       where: {
-        job_id: id,
+        job_id: job_id,
       },
     });
     if (data && freeText && singleChoice && multipleChoice) {

@@ -6,8 +6,8 @@ async function requiermentsRouterUpdate(req, res) {
       select_branch,
       job_description,
       job_type,
-      salary_type,
-      salary,
+      Salary_type,
+      Salary,
       status,
       city,
     } = req.body;
@@ -48,7 +48,7 @@ async function requiermentsRouterUpdate(req, res) {
               id: job_id,
             },
             data: {
-              select_branch: select_branch,
+              Branch: select_branch,
             },
           });
           count++;
@@ -65,24 +65,13 @@ async function requiermentsRouterUpdate(req, res) {
           count++;
         }
   
-        if (select_department) {
-          await Prisma.job.update({
-            where: {
-              id: job_id,
-            },
-            data: {
-              job_title: job_title,
-            },
-          });
-          count++;
-        }
         if (job_type) {
           await Prisma.job.update({
             where: {
               id: job_id,
             },
             data: {
-              job_title: job_type,
+              job_type: job_type,
             },
           });
           count++;
@@ -100,24 +89,24 @@ async function requiermentsRouterUpdate(req, res) {
           count++;
         }
   
-        if (salary_type) {
+        if (Salary_type) {
           await Prisma.job.update({
             where: {
               id: job_id,
             },
             data: {
-              salary_type: salary_type,
+              Salary_type: Salary_type,
             },
           });
           count++;
         }
-        if (salary) {
+        if (Salary) {
           await Prisma.job.update({
             where: {
               id: job_id,
             },
             data: {
-              salary: salary,
+              Salary: Salary,
             },
           });
           count++;
@@ -135,8 +124,14 @@ async function requiermentsRouterUpdate(req, res) {
         }
   
         if (count > 0) {
+          const data = await Prisma.job.findUnique({
+            where:{
+              id: job_id
+            }
+          })
           res.status(200).json({
             changes_done_on_number_fiels: count,
+            data : data
           });
         } else {
           res.status(200).json({
