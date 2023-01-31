@@ -39,7 +39,7 @@ model Job {
   status               Boolean? @default(true)
   job_description      String?
   number_of_applicants Int?     @default(0)
-  Branch String
+  Branch               String
 }
 
 model Free_text {
@@ -94,7 +94,7 @@ model employee {
   workTo           String[]
   Salary           Int
   Salary_type      String
-  Contract_type String
+  Contract_type    String
 }
 
 enum Role {
@@ -134,4 +134,30 @@ model Item {
   GstType           String
   ItemCode          String
   ItemPhoto         String?
+}
+
+model Apply {
+  id                     String   @id @default(auto()) @map("_id") @db.ObjectId
+  job_id                 String   @db.ObjectId
+  fullName               String
+  email                  String
+  phoneNo                String
+  birthDate              String
+  fullAddress            String
+  coverLetter            String
+  availbility            String
+  salary                 String
+  salary_type            String
+  availbilityWorkingDays String[]
+  degree                 String
+  degreeDate             String
+  visa                   String
+  visaExpiryDate         String
+  positionTitle          String
+  companyName            String
+  WorkFrom               String
+  workTo                 String
+  availbilityWorkTime    String[]
+  empPhotoLink           String
+  empResumeLink          String
 }
