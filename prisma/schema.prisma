@@ -158,6 +158,6 @@ model Apply {
   WorkFrom               String
   workTo                 String
   availbilityWorkTime    String[]
-  empPhotoLink           String
-  empResumeLink          String
+  empPhotoLink           String?
+  empResumeLink          String?
 }
