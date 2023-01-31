@@ -27,7 +27,7 @@ async function apply_job_controller(req, res) {
       }
     } else {
       res.status(500).json({
-        data: "not found",
+        data: "NOt found",
       });
     }
   } catch (err) {
