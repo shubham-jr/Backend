@@ -10,12 +10,21 @@ async function free_question(req,res){
         })
         if (exist){
            try{  
-            const data = await Prisma.
+            const data = await Prisma.free_text_save.create({
+                where:{
+                     question_id:id,
+                     job_id:req.body.job_id,
+                     answer:req.body.answer
+                }
+            })
+            res.status(200).json({
+                data:data
+            })
            }catch(err){
             console.log(err)
-            res.status(500).json9{
+            res.status(500).json({
                 err:err
-            }
+            })
            }
         } 
     }

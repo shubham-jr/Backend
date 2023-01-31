@@ -166,16 +166,19 @@ model Free_text_save {
   id          String @id @default(auto()) @map("_id") @db.ObjectId
   question_id String @db.ObjectId
   answer      String
+  job_id      String @db.ObjectId
 }
 
 model Single_choice_save {
   id          String @id @default(auto()) @map("_id") @db.ObjectId
   question_id String @db.ObjectId
   answer      String
+  job_id      String @db.ObjectId
 }
 
 model Multiple_choice_save {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   question_id String   @db.ObjectId
   answer      String[]
+  job_id      String   @db.ObjectId
 }
