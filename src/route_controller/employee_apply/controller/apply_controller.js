@@ -3,7 +3,7 @@ const Prisma = require("../../../../config/helper");
 async function apply_job_controller(req, res) {
   const data = req.body;
   const id = req.params.jobid;
-  console.log(id)
+  console.log(id);
   try {
     const ifexist = await Prisma.job.findUnique({
       where: {
@@ -15,6 +15,15 @@ async function apply_job_controller(req, res) {
         const info = await Prisma.apply.create({
           data: {
             ...data,
+            job_id: id,
+          },
+        });
+        await Prisma.job.update({
+          where: {
+            id: id,
+          },
+          data: {
+            number_of_applicants: ifexist.number_of_applicants+1,
           },
         });
         res.status(200).json({
@@ -38,4 +47,4 @@ async function apply_job_controller(req, res) {
     });
   }
 }
-module.exports = { apply_job_controller};
+module.exports = { apply_job_controller };
