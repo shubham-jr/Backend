@@ -23,7 +23,7 @@ async function apply_job_controller(req, res) {
             id: id,
           },
           data: {
-            number_of_applicants: ifexist.number_of_applicants+1,
+            number_of_applicants: ifexist.number_of_applicants+1  ,
           },
         });
         res.status(200).json({
