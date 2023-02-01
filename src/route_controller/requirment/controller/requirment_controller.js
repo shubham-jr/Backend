@@ -41,6 +41,7 @@ async function requirementController(req, res) {
         status: status,
         city: city,
         user_id: req.user.id,
+        date:Date()
       
       },
     });
@@ -60,7 +61,7 @@ async function requirementController(req, res) {
         Salary: Salary,
         city: city,
         user_id: req.user.id,
-        
+        date:Date()
       },
     });
     res.status(200).json({

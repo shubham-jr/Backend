@@ -35,7 +35,7 @@ model Job {
   job_type                 String?
   Salary_type              String?
   Salary                   String?
-  date                     String?
+  date                     String?  
   status                   Boolean? @default(true)
   job_description          String?
   number_of_applicants     Int?     @default(0)
@@ -164,6 +164,7 @@ model Apply {
   from                   String[]
   empPhotoLink           String?
   empResumeLink          String?
+  status String @default("contacted")
 }
 
 model Free_text_save {
