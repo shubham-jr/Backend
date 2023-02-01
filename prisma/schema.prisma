@@ -28,18 +28,21 @@ model Otp {
 }
 
 model Job {
-  id                   String   @id @default(auto()) @map("_id") @db.ObjectId
-  user_id              String   @db.ObjectId
-  job_title            String?
-  city                 String?
-  job_type             String?
-  Salary_type          String?
-  Salary               String?
-  date                 String?
-  status               Boolean? @default(true)
-  job_description      String?
-  number_of_applicants Int?     @default(0)
-  Branch               String
+  id                       String   @id @default(auto()) @map("_id") @db.ObjectId
+  user_id                  String   @db.ObjectId
+  job_title                String?
+  city                     String?
+  job_type                 String?
+  Salary_type              String?
+  Salary                   String?
+  date                     String?
+  status                   Boolean? @default(true)
+  job_description          String?
+  number_of_applicants     Int?     @default(0)
+  interview_of_applicants  Int?     @default(0)
+  contracted_of_applicants Int?     @default(0)
+  rejected_of_applicants   Int?     @default(0)
+  Branch                   String
 }
 
 model Free_text {
