@@ -154,7 +154,6 @@ model Apply {
   degree                 String
   degreeDate             String
   visa                   String
-  visaExpiryDate         String
   positionTitle          String
   companyName            String
   WorkFrom               String
