@@ -90,8 +90,10 @@ model employee {
   emergencyMobile  String
   positionTitle    String
   companyName      String
-  workFrom         String[]
-  workTo           String[]
+  workFrom         String
+  workTo           String
+  to               String[]
+  from             String[]
   Salary           Int
   Salary_type      String
   Contract_type    String
