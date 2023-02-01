@@ -144,10 +144,8 @@ model Apply {
   fullName               String
   email                  String
   phoneNo                String
-  birthDate              String
   fullAddress            String
   coverLetter            String
-  availbility            String
   salary                 String
   salary_type            String
   availbilityWorkingDays String[]

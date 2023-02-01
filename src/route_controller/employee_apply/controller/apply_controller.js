@@ -3,6 +3,7 @@ const Prisma = require("../../../../config/helper");
 async function apply_job_controller(req, res) {
   const data = req.body;
   const id = req.params.jobid;
+  console.log(id)
   try {
     const ifexist = await Prisma.job.findUnique({
       where: {
