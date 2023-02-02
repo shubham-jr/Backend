@@ -1,7 +1,8 @@
 const Prisma = require("../../../../config/helper")
 
 async function free_question(req,res){
-    const id = req.body.id
+    const id = req.params.freeid
+    console.log(id)
     try{
         const exist = await Prisma.Free_text.findUnique({
             where:{
@@ -11,7 +12,7 @@ async function free_question(req,res){
         if (exist){
            try{  
             const data = await Prisma.free_text_save.create({
-                where:{
+                data:{
                      question_id:id,
                      job_id:req.body.job_id,
                      answer:req.body.answer
