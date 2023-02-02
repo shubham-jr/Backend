@@ -187,3 +187,21 @@ model Multiple_choice_save {
   answer      String[]
   job_id      String   @db.ObjectId
 }
+
+model After_contacted {
+  id                  String @id @default(auto()) @map("_id") @db.ObjectId
+  jod_id              String @db.ObjectId
+  apply_id            String
+  name                String
+  email               String
+  address             String
+  date_of_brith       String
+  bank_name           String
+  account_name        String
+  bsb_number          String
+  account_number      String
+  emergency_name      String
+  relationship        String
+  emergency_mobile_no String
+  emergency_phone_no  String
+}
