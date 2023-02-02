@@ -1,7 +1,8 @@
 const Prisma = require("../../../../config/helper")
 
 async function single_choice(req,res){
-    const id = req.body.id
+    const id = req.params.singleid
+    console.log(id)
     try{
         const exist = await Prisma.single_choice.findUnique({
             where:{
@@ -11,7 +12,7 @@ async function single_choice(req,res){
         if (exist){
            try{  
             const data = await Prisma.single_choice_save.create({
-                where:{
+                data:{
                      question_id:id,
                      job_id:req.body.job_id,
                      answer:req.body.answer
