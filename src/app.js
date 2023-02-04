@@ -30,6 +30,7 @@ const employee_Route = require("../src/route_controller/employee_team/employee_r
 const schedule_route = require("../src/route_controller/schedule/schedule_route")
 const inventory_route = require("../src/route_controller/inventory/inventory_route")
 const apply = require("./route_controller/employee_apply/app.route")
+const contract = require('./route_controller/contract/contract_router')
 //adding middleware for the custom routes
 app.use(signupRoute);
 app.use(loginRoute);
@@ -39,6 +40,7 @@ app.use(employee_Route)
 app.use(schedule_route)
 app.use(inventory_route)
 app.use(apply)
+app.use(contract)
 //export the module
 
 module.exports = app;

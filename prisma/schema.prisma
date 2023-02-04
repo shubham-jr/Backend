@@ -189,13 +189,13 @@ model Multiple_choice_save {
 }
 
 model After_contacted {
-  id                  String @id @default(auto()) @map("_id") @db.ObjectId
-  jod_id              String @db.ObjectId
-  apply_id            String
+  id                  String  @id @default(auto()) @map("_id") @db.ObjectId
+  job_id              String  @db.ObjectId
+  apply_id            String  @db.ObjectId
   name                String
   email               String
   address             String
-  date_of_brith       String
+  date_of_birth       String
   phoneNo             String
   mobileNo            String
   bank_name           String
@@ -206,4 +206,47 @@ model After_contacted {
   relationship        String
   emergency_mobile_no String
   emergency_phone_no  String
+  super_fund          String?
+}
+
+model Aprafund {
+  id                   String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id               String @db.ObjectId
+  apply_id             String @db.ObjectId
+  after_contracted     String @db.ObjectId
+  fullName             String
+  taxFile              String
+  ABN                  String
+  fundName             String
+  fundAddress          String
+  subrub               String
+  accountName          String
+  empIdentificationNum String
+  state                String
+  fundPhone            String
+  USI                  String
+  memberNumber         String
+  postcode             String
+}
+
+model SmsfFund {
+  id                   String  @id @default(auto()) @map("_id") @db.ObjectId
+  job_id               String  @db.ObjectId
+  apply_id             String  @db.ObjectId
+  after_contracted     String  @db.ObjectId
+  fullName             String
+  taxFile              String
+  ABN                  String
+  fundName             String
+  fundAddress          String
+  subrub               String
+  empIdentificationNum String
+  state                String
+  fundPhone            String
+  ESB                  String
+  BSB                  String
+  accountNum           String
+  signed               String?
+  date                 String?
+  postcode             String
 }
