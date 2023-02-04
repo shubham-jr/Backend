@@ -16,6 +16,7 @@ const {
 const{getAllQuestion} =require('./controller/getAllQuestion_controller')
 const{requiermentsRouterUpdate} =require('./controller/updateJob_controller')
 const{getQuestionId} =require('./controller/getQuestion_by_id_controller')
+const {getjobcontrollerById} = require("./controller/getJobById")
 requirmentRoute.post("/job", auth , requirementController);
 requirmentRoute.post("/job/freetext/:id([0-9a-fA-F]{24})", auth ,freeTextController);
 requirmentRoute.post(
@@ -44,6 +45,7 @@ requirmentRoute.put(
   multipleChoiceUpdate
 );
 requirmentRoute.get('/job',getjobcontroller)
+requirmentRoute.get('/job/:jobid',getjobcontrollerById)
 requirmentRoute.get('/job/question/',getAllQuestion)
 requirmentRoute.get('/job/question/:jobid',getQuestionId)
 
