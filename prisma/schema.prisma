@@ -196,6 +196,8 @@ model After_contacted {
   email               String
   address             String
   date_of_brith       String
+  phoneNo             String
+  mobileNo            String
   bank_name           String
   account_name        String
   bsb_number          String

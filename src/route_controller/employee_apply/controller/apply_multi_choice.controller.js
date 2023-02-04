@@ -1,7 +1,7 @@
 const Prisma = require("../../../../config/helper")
 
 async function multi_choice(req,res){
-    const id = req.params.multiid
+    const id = req.params   .multiid
     try{
         const exist = await Prisma.multiple_choice.findUnique({
             where:{
