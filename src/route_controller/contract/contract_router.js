@@ -8,6 +8,6 @@ const {postSuperFund} =require('./controller/postSuperFund')
 contract.post('/contract/personal',postPersonal)
 contract.post('/contract/apra',postApra)
 contract.post('/contract/smsf',postSmsf)
-contract.post('/contract/smsf',postSuperFund)
+contract.post('/contract/superfund',postSuperFund)
 
 module.exports =contract
