@@ -250,3 +250,13 @@ model SmsfFund {
   date                 String?
   postcode             String
 }
+
+model SuperFund {
+   id                   String  @id @default(auto()) @map("_id") @db.ObjectId
+  job_id               String  @db.ObjectId
+  apply_id             String  @db.ObjectId
+  after_contracted     String  @db.ObjectId
+  fullName             String
+  taxFile              String
+  empIdentificationNum String
+}
