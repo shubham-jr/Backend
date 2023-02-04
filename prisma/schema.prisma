@@ -243,7 +243,7 @@ model SmsfFund {
   empIdentificationNum String
   state                String
   fundPhone            String
-  ESB                  String
+  ESA                  String
   BSB                  String
   accountNum           String
   signed               String?

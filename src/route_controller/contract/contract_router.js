@@ -4,7 +4,9 @@ const{postPersonal} = require('./controller/postPersonal.js')
 const {postApra} =require('./controller/postApraFund')
 const {postSmsf} =require('./controller/postSmsf')
 
+
 contract.post('/contract/personal',postPersonal)
 contract.post('/contract/apra',postApra)
+contract.post('/contract/smsf',postSmsf)
 
 module.exports =contract
