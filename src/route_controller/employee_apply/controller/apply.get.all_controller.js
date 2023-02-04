@@ -1,6 +1,7 @@
 const Prisma = require("../../../../config/helper");
 async function getAllApply(req,res){
-    const id= req.params.id
+    const id= req.params.jobid
+    console.log(id)
     try{
         const data = await Prisma.apply.findMany({
             where:{
