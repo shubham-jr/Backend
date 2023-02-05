@@ -294,6 +294,4 @@ model BakeryIndcution {
   q26              String
   q27              String
   q28              String
-  q29              String
-  q30              String
 }
