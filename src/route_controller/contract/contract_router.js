@@ -16,7 +16,7 @@ contract.post('/contract/smsf',postSmsf)
 contract.post('/contract/superfund',postSuperFund)
 contract.post('/contract/BakeryIndcution',postBakeryInduction)
 contract.post('/contract/TaxFileDeclaration',TaxFileDeclaration)
-contract.post('/contract/fairworkPolicydocument',FairWork_PolicyDocument)
+contract.post('/contract/fairwork',FairWork_PolicyDocument)
 
 
 /// file upload route set

@@ -311,8 +311,8 @@ model FairWork_PolicyDocument {
   job_id            String @db.ObjectId
   apply_id          String @db.ObjectId
   after_contracted  String @db.ObjectId
-  fairWorkFullname1 String
-  fairWorkFullname2 String
+  fullname1 String
+  fullname2 String
 }
 
 model PolicyDocument {
