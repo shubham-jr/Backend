@@ -10,7 +10,7 @@ const{uploadfile} = require("./controller/uploadfile_controller")
 const{TaxFileDeclaration} = require("./controller/taxFileDeclaration") 
 const{FairWork} = require("./controller/fairwork") 
 const {PolicyDocument} =require("./controller/policydocument")
-
+const {PolicyDocumentSheet} = require('./controller/policyDocumentSheet')
 
 
 contract.post('/contract/personal',postPersonal)
@@ -21,6 +21,7 @@ contract.post('/contract/BakeryIndcution',postBakeryInduction)
 contract.post('/contract/TaxFileDeclaration',TaxFileDeclaration)
 contract.post('/contract/fairwork',FairWork)
 contract.post('/contract/policydocument',PolicyDocument)
+contract.post('/contract/policydocumentsheet',PolicyDocumentSheet)
 
 /// file upload route set
 
