@@ -29,6 +29,7 @@ const fileUploadMiddleware = (req, res, next) => {
     console.log(req.files)
   upload.array('data',2)(req, res, (err) => {
     if (err) {
+      console.log(err)
       return res.status(400).json({ error: err });
     }
     next();

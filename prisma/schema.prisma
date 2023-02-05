@@ -210,10 +210,10 @@ model After_contacted {
 }
 
 model Aprafund {
-  id                   String @id @default(auto()) @map("_id") @db.ObjectId
-  job_id               String @db.ObjectId
-  apply_id             String @db.ObjectId
-  after_contracted     String @db.ObjectId
+  id                   String  @id @default(auto()) @map("_id") @db.ObjectId
+  job_id               String  @db.ObjectId
+  apply_id             String  @db.ObjectId
+  after_contracted     String  @db.ObjectId
   fullName             String
   taxFile              String
   ABN                  String
@@ -227,6 +227,7 @@ model Aprafund {
   USI                  String
   memberNumber         String
   postcode             String
+  pdffile              String?
 }
 
 model SmsfFund {
@@ -249,6 +250,7 @@ model SmsfFund {
   signed               String?
   date                 String?
   postcode             String
+  pdffile              String?
 }
 
 model SuperFund {
