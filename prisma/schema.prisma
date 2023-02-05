@@ -297,3 +297,11 @@ model BakeryIndcution {
   q27              String
   q28              String
 }
+
+model TaxFileDeclaration {
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id           String @db.ObjectId
+  apply_id         String @db.ObjectId
+  after_contracted String @db.ObjectId
+  fileName         String
+}
