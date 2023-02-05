@@ -307,12 +307,19 @@ model TaxFileDeclaration {
 }
 
 model FairWork_PolicyDocument {
+  id                String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id            String @db.ObjectId
+  apply_id          String @db.ObjectId
+  after_contracted  String @db.ObjectId
+  fairWorkFullname1 String
+  fairWorkFullname2 String
+}
+
+model PolicyDocument {
   id                      String @id @default(auto()) @map("_id") @db.ObjectId
   job_id                  String @db.ObjectId
   apply_id                String @db.ObjectId
   after_contracted        String @db.ObjectId
-  fairWorkFullname1       String
-  fairWorkFullname2       String
   PolicyDocumentFullname1 String
   PolicyDocumentFullname2 String
 }
