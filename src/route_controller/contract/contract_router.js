@@ -8,6 +8,7 @@ const {postBakeryInduction} =require('./controller/postBakeryInduction')
 const {fileUploadMiddleware} = require("../../middlewares/upload")
 const{uploadfile} = require("./controller/uploadfile_controller")
 const{TaxFileDeclaration} = require("./controller/taxFileDeclaration") 
+const{FairWork_PolicyDocument} = require("./controller/fairwork_policydocument") 
 
 contract.post('/contract/personal',postPersonal)
 contract.post('/contract/apra',postApra)
@@ -15,6 +16,7 @@ contract.post('/contract/smsf',postSmsf)
 contract.post('/contract/superfund',postSuperFund)
 contract.post('/contract/BakeryIndcution',postBakeryInduction)
 contract.post('/contract/TaxFileDeclaration',TaxFileDeclaration)
+contract.post('/contract/fairworkPolicydocument',FairWork_PolicyDocument)
 
 
 /// file upload route set
