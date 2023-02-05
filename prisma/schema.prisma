@@ -320,6 +320,6 @@ model PolicyDocument {
   job_id                  String @db.ObjectId
   apply_id                String @db.ObjectId
   after_contracted        String @db.ObjectId
-  PolicyDocumentFullname1 String
-  PolicyDocumentFullname2 String
+  fullname1 String
+  fullname2 String
 }
