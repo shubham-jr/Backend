@@ -1,8 +1,8 @@
 const Prisma = require("../../../../config/helper.js");
-async function FairWork_PolicyDocument(req, res) {
+async function FairWork(req, res) {
     const data = req.body;
     try {
-      const res_ = await Prisma.fairWork_PolicyDocument.create({
+      const res_ = await Prisma.FairWork.create({
         data: {
           ...data,
         },
@@ -15,4 +15,4 @@ async function FairWork_PolicyDocument(req, res) {
       res.status(500).json({ err: err });
     }
   }
-  module.exports = { FairWork_PolicyDocument };
+  module.exports = { FairWork };
