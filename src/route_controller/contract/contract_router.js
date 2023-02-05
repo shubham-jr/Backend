@@ -7,7 +7,7 @@ const {postSuperFund} =require('./controller/postSuperFund')
 const {postBakeryInduction} =require('./controller/postBakeryInduction')
 const {fileUploadMiddleware} = require("../../middlewares/upload")
 const{uploadfile} = require("./controller/uploadfile_controller")
-const{TaxFileDeclaration} = require("./controller/uploadfile_controller") 
+const{TaxFileDeclaration} = require("./controller/taxFileDeclaration") 
 
 contract.post('/contract/personal',postPersonal)
 contract.post('/contract/apra',postApra)
