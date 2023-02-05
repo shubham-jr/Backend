@@ -306,7 +306,7 @@ model TaxFileDeclaration {
   fileName         String
 }
 
-model FairWork_PolicyDocument {
+model FairWork {
   id               String @id @default(auto()) @map("_id") @db.ObjectId
   job_id           String @db.ObjectId
   apply_id         String @db.ObjectId
@@ -322,4 +322,17 @@ model PolicyDocument {
   after_contracted String @db.ObjectId
   fullname1        String
   fullname2        String
+}
+
+model PolicyDocumentSheet {
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id           String @db.ObjectId
+  apply_id         String @db.ObjectId
+  after_contracted String @db.ObjectId
+  DOB              String
+  email            String
+  fullname1        String
+  fullname2        String
+  mobileNo         String
+  name             String
 }
