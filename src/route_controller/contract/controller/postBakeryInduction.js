@@ -2,7 +2,7 @@ const Prisma = require("../../../../config/helper.js");
 async function postBakeryInduction(req, res) {
     const data = req.body;
     try {
-      const res_ = await Prisma.bakeryIndcution.create({
+      const res_ = await Prisma.BakeryIndcution.create({
         data: {
           ...data,
         },
