@@ -307,19 +307,19 @@ model TaxFileDeclaration {
 }
 
 model FairWork_PolicyDocument {
-  id                String @id @default(auto()) @map("_id") @db.ObjectId
-  job_id            String @db.ObjectId
-  apply_id          String @db.ObjectId
-  after_contracted  String @db.ObjectId
-  fullname1 String
-  fullname2 String
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id           String @db.ObjectId
+  apply_id         String @db.ObjectId
+  after_contracted String @db.ObjectId
+  fullname1        String
+  fullname2        String
 }
 
 model PolicyDocument {
-  id                      String @id @default(auto()) @map("_id") @db.ObjectId
-  job_id                  String @db.ObjectId
-  apply_id                String @db.ObjectId
-  after_contracted        String @db.ObjectId
-  fullname1 String
-  fullname2 String
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id           String @db.ObjectId
+  apply_id         String @db.ObjectId
+  after_contracted String @db.ObjectId
+  fullname1        String
+  fullname2        String
 }
