@@ -1,61 +1,52 @@
 
 const Prisma = require("../../../../config/helper.js");
 async function getAllContract(req, res) {
-    const applyid= req.params.applyid;
-    const jobid = req.params.jobid
+    const apply_id= req.params.applyid;
+    const job_id = req.params.jobid
     try {
-      const res_ = await Prisma.After_contacted.findUnique({
+      const res_ = await Prisma.After_contacted.findMany({
         where: {
-          applyid:applyid,
-          jobid:jobid
+          apply_id:apply_id
         },
       });
-      const res_1 = await Prisma.Aprafund.findUnique({
+      const res_1 = await Prisma.Aprafund.findMany({
         where: {
-          applyid:applyid,
-          jobid:jobid
+          apply_id:apply_id
         },
       });
-      const res_2 = await Prisma.SmsfFund.findUnique({
+      const res_2 = await Prisma.SmsfFund.findMany({
         where: {
-          applyid:applyid,
-          jobid:jobid
+          apply_id:apply_id
         },
       });
-      const res_3 = await Prisma.SuperFund.findUnique({
+      const res_3 = await Prisma.SuperFund.findMany({
         where: {
-          applyid:applyid,
-          jobid:jobid
+          apply_id:apply_id
         },
       });
-      const res_4 = await Prisma.BakeryIndcution.findUnique({
+      const res_4 = await Prisma.BakeryIndcution.findMany({
         where: {
-          applyid:applyid,
-          jobid:jobid
+          apply_id:apply_id
         },
       });
-      const res_5 = await Prisma.TaxFileDeclaration.findUnique({
+      const res_5 = await Prisma.TaxFileDeclaration.findMany({
         where: {
-          applyid:applyid,
-          jobid:jobid
+          apply_id:apply_id
         },
       });
-      const res_6 = await Prisma.FairWork.findUnique({
+      const res_6 = await Prisma.FairWork.findMany({
         where: {
-          applyid:applyid,
-          jobid:jobid
+          apply_id:apply_id
         },
       });
-      const res_7 = await Prisma.PolicyDocument.findUnique({
+      const res_7 = await Prisma.PolicyDocument.findMany({
         where: {
-          applyid:applyid,
-          jobid:jobid
+          apply_id:apply_id
         },
       });
-      const res_8 = await Prisma.PolicyDocumentSheet.findUnique({
+      const res_8 = await Prisma.PolicyDocumentSheet.findMany({
         where: {
-          applyid:applyid,
-          jobid:jobid
+          apply_id:apply_id
         },
       });
       res.status(200).json({

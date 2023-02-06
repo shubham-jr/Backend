@@ -188,9 +188,11 @@ model Multiple_choice_save {
   job_id      String   @db.ObjectId
 }
 
+//// CONTRACT DATA MODEL GET STARTED
+
 model After_contacted {
   id                  String  @id @default(auto()) @map("_id") @db.ObjectId
-  job_id              String  @db.ObjectId
+  job_id              String  @db.ObjectId 
   apply_id            String  @db.ObjectId
   name                String
   email               String
