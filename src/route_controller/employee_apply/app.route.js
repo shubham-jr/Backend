@@ -13,5 +13,6 @@ apply.post('/apply/job/free/:freeid',free_question);
 apply.post('/apply/job/single/:singleid',single_choice);
 apply.post('/apply/job/multi/:multiid',multi_choice);
 apply.get('/apply/:jobid',getAllApply)
+apply.put('/apply/:applyid/',updateForApplicant)
 
 module.exports = apply
