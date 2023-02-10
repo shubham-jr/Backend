@@ -10,6 +10,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Item {
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  user              String  @db.ObjectId
+  ItemName          String
+  Supplier          String
+  InventoryCategory String
+  Brand             String
+  PackageType       String
+  QtyPerPackage     String
+  PurchaseWith      String
+  PricePerPackage   String
+  PackageQty        String
+  GstType           String
+  ItemCode          String
+  ItemPhoto         String?
+}
+
 model User {
   id             String  @id @default(auto()) @map("_id") @db.ObjectId
   email          String  @unique
@@ -68,78 +85,7 @@ model Multiple_choice {
   user_id  String?  @db.ObjectId
 }
 
-model employee {
-  id               String   @id @default(auto()) @map("_id") @db.ObjectId
-  user             String   @db.ObjectId
-  empName          String
-  empEmail         String
-  empPhone         String
-  empAddress       String
-  empPhoto         String?
-  empPdf           String?
-  empEduDegree     String
-  empDegreeDate    String
-  empdatebirth     String
-  title            String
-  Department       String
-  Branch           String
-  PayrollGroup     String
-  jobType          String
-  Visa             String
-  VisaExpiry       String
-  AvailWorkingDays String[]
-  emergencyName    String
-  relationship     String
-  emergencyMobile  String
-  positionTitle    String
-  companyName      String
-  workFrom         String
-  workTo           String
-  to               String[]
-  from             String[]
-  Salary           Int
-  Salary_type      String
-  Contract_type    String
-}
-
-enum Role {
-  Annual
-  Sick
-  Unpaid
-}
-
-model schdeule {
-  id             String  @id @default(auto()) @map("_id") @db.ObjectId
-  user           String  @db.ObjectId
-  employee       String  @db.ObjectId
-  day            String
-  date           String
-  from           String?
-  to             String?
-  break_time     String?
-  shift_length   String?
-  avg_daily      String?
-  avg_daily_cost String?
-  shiftcost      String?
-  leave          String?
-}
-
-model Item {
-  id                String  @id @default(auto()) @map("_id") @db.ObjectId
-  user              String  @db.ObjectId
-  ItemName          String
-  Supplier          String
-  InventoryCategory String
-  Brand             String
-  PackageType       String
-  QtyPerPackage     String
-  PurchaseWith      String
-  PricePerPackage   String
-  PackageQty        String
-  GstType           String
-  ItemCode          String
-  ItemPhoto         String?
-}
+//// after apply ////
 
 model Apply {
   id                     String   @id @default(auto()) @map("_id") @db.ObjectId
@@ -187,35 +133,97 @@ model Multiple_choice_save {
   answer      String[]
   job_id      String   @db.ObjectId
 }
-
-//// CONTRACT DATA MODEL GET STARTED
-
-model After_contacted {
-  id                  String  @id @default(auto()) @map("_id") @db.ObjectId
-  job_id              String  @db.ObjectId 
-  apply_id            String  @db.ObjectId
-  name                String
-  email               String
-  address             String
-  date_of_birth       String
-  phoneNo             String
-  mobileNo            String
-  bank_name           String
-  account_name        String
-  bsb_number          String
-  account_number      String
-  emergency_name      String
-  relationship        String
-  emergency_mobile_no String
-  emergency_phone_no  String
-  super_fund          String?
+model schdeule {
+  id             String  @id @default(auto()) @map("_id") @db.ObjectId
+  user           String  @db.ObjectId
+  employee       String  @db.ObjectId
+  day            String
+  date           String
+  from           String?
+  to             String?
+  break_time     String?
+  shift_length   String?
+  avg_daily      String?
+  avg_daily_cost String?
+  shiftcost      String?
+  leave          String?
 }
+//////// RECRUITMENT MODEL DATABASE/////////
+
+model employee {
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  user             String   @db.ObjectId
+  job_id           String?  @db.ObjectId
+  apply_id         String?  @db.ObjectId
+  empName          String?
+  empEmail         String?
+  empPhone         String?
+  empAddress       String?
+  empPhoto         String?
+  empPdf           String?
+  empEduDegree     String?
+  empDegreeDate    String?
+  empdatebirth     String?
+  title            String?
+  Department       String?
+  Branch           String?
+  PayrollGroup     String?
+  jobType          String?
+  Visa             String?
+  VisaExpiry       String?
+  AvailWorkingDays String[]
+  emergencyName    String?
+  relationship     String?
+  emergencyMobile  String?
+  emergencyPhone   String?
+  positionTitle    String?
+  companyName      String?
+  workFrom         String?
+  workTo           String?
+  to               String[]
+  from             String[]
+  Salary           Int?
+  Salary_type      String?
+  Contract_type    String?
+  mobileNo         String?
+  bank_name        String?
+  account_name     String?
+  bsb_number       String?
+  account_number   String?
+}
+
+enum Role {
+  Annual
+  Sick
+  Unpaid
+}
+
+// model After_contacted {
+//   id                  String  @id @default(auto()) @map("_id") @db.ObjectId
+//   job_id              String  @db.ObjectId
+//   apply_id            String  @db.ObjectId
+//   name                String
+//   email               String
+//   address             String
+//   date_of_birth       String
+//   phoneNo             String
+//   mobileNo            String
+//   bank_name           String
+//   account_name        String
+//   bsb_number          String
+//   account_number      String
+//   emergency_name      String
+//   relationship        String
+//   emergency_mobile_no String
+//   emergency_phone_no  String
+//   super_fund          String?
+// }
 
 model Aprafund {
   id                   String  @id @default(auto()) @map("_id") @db.ObjectId
   job_id               String  @db.ObjectId
   apply_id             String  @db.ObjectId
-  after_contracted     String  @db.ObjectId
+  employee             String  @db.ObjectId
   fullName             String
   taxFile              String
   ABN                  String
