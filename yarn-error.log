@@ -1,5 +1,5 @@
 Arguments: 
-  /home/krishna/.nvm/versions/node/v19.6.0/bin/node /usr/bin/yarn add gitmoji-cli -g
+  /home/krishna/.nvm/versions/node/v19.6.0/bin/node /home/krishna/.nvm/versions/node/v19.6.0/bin/yarn add prismix --dev
 
 PATH: 
   /home/krishna/.nvm/versions/node/v19.6.0/bin:/home/krishna/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: EACCES: permission denied, mkdir '/home/krishna/projects/Backend/node_modules/@opencensus/core/node_modules/semver'
+  Error: EACCES: permission denied, mkdir '/home/krishna/projects/Backend/node_modules/eslint/node_modules/glob-parent'
 
 npm manifest: 
   {

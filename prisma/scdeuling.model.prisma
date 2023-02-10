@@ -1,0 +1,15 @@
+model schdeule {
+  id             String  @id @default(auto()) @map("_id") @db.ObjectId
+  user           String  @db.ObjectId
+  employee       String  @db.ObjectId
+  day            String
+  date           String
+  from           String?
+  to             String?
+  break_time     String?
+  shift_length   String?
+  avg_daily      String?
+  avg_daily_cost String?
+  shiftcost      String?
+  leave          String?
+}

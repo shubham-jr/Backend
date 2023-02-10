@@ -4,8 +4,8 @@ async function getAllQuestion(req,res){
     console.log(id)
     try{
         const free = await Prisma.Free_text.findMany()
-        const singlechoice = await Prisma.Free_text.findMany()
-        const multiplechoice = await Prisma.Free_text.findMany()
+        const singlechoice = await Prisma.Single_choice.findMany()
+        const multiplechoice = await Prisma.Multiple_choice.findMany()
         res.status(200).json({
             free : free,
             singlechoice :singlechoice,

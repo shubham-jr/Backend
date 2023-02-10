@@ -1,0 +1,200 @@
+//////// RECRUITMENT MODEL DATABASE/////////
+
+model employee {
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  user             String   @db.ObjectId
+  job_id           String?  @db.ObjectId
+  apply_id         String?  @db.ObjectId
+  empName          String?
+  empEmail         String?
+  empPhone         String?
+  empAddress       String?
+  empPhoto         String?
+  empPdf           String?
+  empEduDegree     String?
+  empDegreeDate    String?
+  empdatebirth     String?
+  title            String?
+  Department       String?
+  Branch           String?
+  PayrollGroup     String?
+  jobType          String?
+  Visa             String?
+  VisaExpiry       String?
+  AvailWorkingDays String[]
+  emergencyName    String?
+  relationship     String?
+  emergencyMobile  String?
+  emergencyPhone  String?
+  positionTitle    String?
+  companyName      String?
+  workFrom         String?
+  workTo           String?
+  to               String[]
+  from             String[]
+  Salary           Int?
+  Salary_type      String?
+  Contract_type    String?
+  mobileNo         String?
+  bank_name        String?
+  account_name     String?
+  bsb_number       String?
+  account_number   String?
+}
+
+enum Role {
+  Annual
+  Sick
+  Unpaid
+}
+
+// model After_contacted {
+//   id                  String  @id @default(auto()) @map("_id") @db.ObjectId
+//   job_id              String  @db.ObjectId
+//   apply_id            String  @db.ObjectId
+//   name                String
+//   email               String
+//   address             String
+//   date_of_birth       String
+//   phoneNo             String
+//   mobileNo            String
+//   bank_name           String
+//   account_name        String
+//   bsb_number          String
+//   account_number      String
+//   emergency_name      String
+//   relationship        String
+//   emergency_mobile_no String
+//   emergency_phone_no  String
+//   super_fund          String?
+// }
+
+model Aprafund {
+  id                   String  @id @default(auto()) @map("_id") @db.ObjectId
+  job_id               String  @db.ObjectId
+  apply_id             String  @db.ObjectId
+  employee             String  @db.ObjectId
+  fullName             String
+  taxFile              String
+  ABN                  String
+  fundName             String
+  fundAddress          String
+  subrub               String
+  accountName          String
+  empIdentificationNum String
+  state                String
+  fundPhone            String
+  USI                  String
+  memberNumber         String
+  postcode             String
+  pdffile              String?
+}
+
+model SmsfFund {
+  id                   String  @id @default(auto()) @map("_id") @db.ObjectId
+  job_id               String  @db.ObjectId
+  apply_id             String  @db.ObjectId
+  after_contracted     String  @db.ObjectId
+  fullName             String
+  taxFile              String
+  ABN                  String
+  fundName             String
+  fundAddress          String
+  subrub               String
+  empIdentificationNum String
+  state                String
+  fundPhone            String
+  ESA                  String
+  BSB                  String
+  accountNum           String
+  signed               String?
+  date                 String?
+  postcode             String
+  pdffile              String?
+}
+
+model SuperFund {
+  id                   String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id               String @db.ObjectId
+  apply_id             String @db.ObjectId
+  after_contracted     String @db.ObjectId
+  fullName             String
+  taxFile              String
+  empIdentificationNum String
+}
+
+model BakeryIndcution {
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id           String @db.ObjectId
+  apply_id         String @db.ObjectId
+  after_contracted String @db.ObjectId
+  q1               String
+  q2               String
+  q3               String
+  q4               String
+  q5               String
+  q6               String
+  q7               String
+  q8               String
+  q9               String
+  q10              String
+  q11              String
+  q12              String
+  q13              String
+  q14              String
+  q15              String
+  q16              String
+  q17              String
+  q18              String
+  q19              String
+  q20              String
+  q21              String
+  q22              String
+  q23              String
+  q24              String
+  q25              String
+  q26              String
+  q27              String
+  q28              String
+}
+
+model TaxFileDeclaration {
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id           String @db.ObjectId
+  apply_id         String @db.ObjectId
+  after_contracted String @db.ObjectId
+  fileName         String
+}
+
+model FairWork {
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id           String @db.ObjectId
+  apply_id         String @db.ObjectId
+  after_contracted String @db.ObjectId
+  fullname1        String
+  fullname2        String
+}
+
+model PolicyDocument {
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id           String @db.ObjectId
+  apply_id         String @db.ObjectId
+  after_contracted String @db.ObjectId
+  fullname1        String
+  fullname2        String
+}
+
+model PolicyDocumentSheet {
+  id               String  @id @default(auto()) @map("_id") @db.ObjectId
+  job_id           String  @db.ObjectId
+  apply_id         String  @db.ObjectId
+  after_contracted String  @db.ObjectId
+  DOB              String
+  email            String
+  fullname1        String
+  fullname2        String
+  mobileNo         String
+  name             String
+  enabled          Boolean
+  enabled2         Boolean
+}
