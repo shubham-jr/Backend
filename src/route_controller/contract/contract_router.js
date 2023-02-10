@@ -12,8 +12,10 @@ const{FairWork} = require("./controller/fairwork")
 const {PolicyDocument} =require("./controller/policydocument")
 const {PolicyDocumentSheet} = require('./controller/policyDocumentSheet')
 const {getAllContract} = require('./controller/getAllContract_controller')
+const auth = require("../../middlewares/auth");
 
-contract.post('/contract/personal',postPersonal)
+
+contract.post('/contract/personal',auth,postPersonal)
 contract.post('/contract/apra',postApra)
 contract.post('/contract/smsf',postSmsf)
 contract.post('/contract/superfund',postSuperFund)

@@ -4,6 +4,7 @@ async function postPersonal(req, res) {
   try {
     const res_ = await Prisma.employee.create({
       data: {
+        user:req.user.id,
         ...data,
       },
     });
