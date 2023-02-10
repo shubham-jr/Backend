@@ -152,7 +152,7 @@ model schdeule {
 
 model employee {
   id               String   @id @default(auto()) @map("_id") @db.ObjectId
-  user             String   @db.ObjectId
+  user             String?  @db.ObjectId
   job_id           String?  @db.ObjectId
   empName          String?
   empEmail         String?
