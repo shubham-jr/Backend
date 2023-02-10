@@ -4,7 +4,6 @@ model employee {
   id               String   @id @default(auto()) @map("_id") @db.ObjectId
   user             String   @db.ObjectId
   job_id           String?  @db.ObjectId
-  apply_id         String?  @db.ObjectId
   empName          String?
   empEmail         String?
   empPhone         String?
@@ -72,7 +71,6 @@ enum Role {
 model Aprafund {
   id                   String  @id @default(auto()) @map("_id") @db.ObjectId
   job_id               String  @db.ObjectId
-  apply_id             String  @db.ObjectId
   employee             String  @db.ObjectId
   fullName             String
   taxFile              String
@@ -93,7 +91,6 @@ model Aprafund {
 model SmsfFund {
   id                   String  @id @default(auto()) @map("_id") @db.ObjectId
   job_id               String  @db.ObjectId
-  apply_id             String  @db.ObjectId
   after_contracted     String  @db.ObjectId
   fullName             String
   taxFile              String
@@ -116,8 +113,7 @@ model SmsfFund {
 model SuperFund {
   id                   String @id @default(auto()) @map("_id") @db.ObjectId
   job_id               String @db.ObjectId
-  apply_id             String @db.ObjectId
-  after_contracted     String @db.ObjectId
+  employee     String @db.ObjectId
   fullName             String
   taxFile              String
   empIdentificationNum String
@@ -126,8 +122,7 @@ model SuperFund {
 model BakeryIndcution {
   id               String @id @default(auto()) @map("_id") @db.ObjectId
   job_id           String @db.ObjectId
-  apply_id         String @db.ObjectId
-  after_contracted String @db.ObjectId
+  employee String @db.ObjectId
   q1               String
   q2               String
   q3               String
@@ -161,16 +156,14 @@ model BakeryIndcution {
 model TaxFileDeclaration {
   id               String @id @default(auto()) @map("_id") @db.ObjectId
   job_id           String @db.ObjectId
-  apply_id         String @db.ObjectId
-  after_contracted String @db.ObjectId
+  employee String @db.ObjectId
   fileName         String
 }
 
 model FairWork {
   id               String @id @default(auto()) @map("_id") @db.ObjectId
   job_id           String @db.ObjectId
-  apply_id         String @db.ObjectId
-  after_contracted String @db.ObjectId
+  employee String @db.ObjectId
   fullname1        String
   fullname2        String
 }
@@ -178,8 +171,7 @@ model FairWork {
 model PolicyDocument {
   id               String @id @default(auto()) @map("_id") @db.ObjectId
   job_id           String @db.ObjectId
-  apply_id         String @db.ObjectId
-  after_contracted String @db.ObjectId
+  employee String @db.ObjectId
   fullname1        String
   fullname2        String
 }
@@ -187,8 +179,7 @@ model PolicyDocument {
 model PolicyDocumentSheet {
   id               String  @id @default(auto()) @map("_id") @db.ObjectId
   job_id           String  @db.ObjectId
-  apply_id         String  @db.ObjectId
-  after_contracted String  @db.ObjectId
+  employee String  @db.ObjectId
   DOB              String
   email            String
   fullname1        String

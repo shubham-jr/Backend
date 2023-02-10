@@ -23,7 +23,7 @@ contract.post('/contract/fairwork',FairWork)
 contract.post('/contract/policydocument',PolicyDocument)
 contract.post('/contract/policydocumentsheet',PolicyDocumentSheet)
 
-contract.get('/contract/:applyid/:jobid',getAllContract)
+contract.get('/contract/:jobid',getAllContract)
 
 /// file upload route set
 

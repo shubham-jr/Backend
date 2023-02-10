@@ -154,7 +154,6 @@ model employee {
   id               String   @id @default(auto()) @map("_id") @db.ObjectId
   user             String   @db.ObjectId
   job_id           String?  @db.ObjectId
-  apply_id         String?  @db.ObjectId
   empName          String?
   empEmail         String?
   empPhone         String?
@@ -222,7 +221,6 @@ enum Role {
 model Aprafund {
   id                   String  @id @default(auto()) @map("_id") @db.ObjectId
   job_id               String  @db.ObjectId
-  apply_id             String  @db.ObjectId
   employee             String  @db.ObjectId
   fullName             String
   taxFile              String
@@ -243,7 +241,6 @@ model Aprafund {
 model SmsfFund {
   id                   String  @id @default(auto()) @map("_id") @db.ObjectId
   job_id               String  @db.ObjectId
-  apply_id             String  @db.ObjectId
   after_contracted     String  @db.ObjectId
   fullName             String
   taxFile              String
@@ -266,85 +263,79 @@ model SmsfFund {
 model SuperFund {
   id                   String @id @default(auto()) @map("_id") @db.ObjectId
   job_id               String @db.ObjectId
-  apply_id             String @db.ObjectId
-  after_contracted     String @db.ObjectId
+  employee             String @db.ObjectId
   fullName             String
   taxFile              String
   empIdentificationNum String
 }
 
 model BakeryIndcution {
-  id               String @id @default(auto()) @map("_id") @db.ObjectId
-  job_id           String @db.ObjectId
-  apply_id         String @db.ObjectId
-  after_contracted String @db.ObjectId
-  q1               String
-  q2               String
-  q3               String
-  q4               String
-  q5               String
-  q6               String
-  q7               String
-  q8               String
-  q9               String
-  q10              String
-  q11              String
-  q12              String
-  q13              String
-  q14              String
-  q15              String
-  q16              String
-  q17              String
-  q18              String
-  q19              String
-  q20              String
-  q21              String
-  q22              String
-  q23              String
-  q24              String
-  q25              String
-  q26              String
-  q27              String
-  q28              String
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id   String @db.ObjectId
+  employee String @db.ObjectId
+  q1       String
+  q2       String
+  q3       String
+  q4       String
+  q5       String
+  q6       String
+  q7       String
+  q8       String
+  q9       String
+  q10      String
+  q11      String
+  q12      String
+  q13      String
+  q14      String
+  q15      String
+  q16      String
+  q17      String
+  q18      String
+  q19      String
+  q20      String
+  q21      String
+  q22      String
+  q23      String
+  q24      String
+  q25      String
+  q26      String
+  q27      String
+  q28      String
 }
 
 model TaxFileDeclaration {
-  id               String @id @default(auto()) @map("_id") @db.ObjectId
-  job_id           String @db.ObjectId
-  apply_id         String @db.ObjectId
-  after_contracted String @db.ObjectId
-  fileName         String
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id   String @db.ObjectId
+  employee String @db.ObjectId
+  fileName String
 }
 
 model FairWork {
-  id               String @id @default(auto()) @map("_id") @db.ObjectId
-  job_id           String @db.ObjectId
-  apply_id         String @db.ObjectId
-  after_contracted String @db.ObjectId
-  fullname1        String
-  fullname2        String
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id    String @db.ObjectId
+  employee  String @db.ObjectId
+  fullname1 String
+  fullname2 String
 }
 
 model PolicyDocument {
-  id               String @id @default(auto()) @map("_id") @db.ObjectId
-  job_id           String @db.ObjectId
-  apply_id         String @db.ObjectId
-  after_contracted String @db.ObjectId
-  fullname1        String
-  fullname2        String
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id    String @db.ObjectId
+  employee  String @db.ObjectId
+  fullname1 String
+  fullname2 String
 }
 
 model PolicyDocumentSheet {
-  id               String  @id @default(auto()) @map("_id") @db.ObjectId
-  job_id           String  @db.ObjectId
-  apply_id         String  @db.ObjectId
-  after_contracted String  @db.ObjectId
-  DOB              String
-  email            String
-  fullname1        String
-  fullname2        String
-  mobileNo         String
-  name             String
-  enabled          Boolean
-  enabled2         Boolean
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  job_id    String  @db.ObjectId
+  employee  String  @db.ObjectId
+  DOB       String
+  email     String
+  fullname1 String
+  fullname2 String
+  mobileNo  String
+  name      String
+  enabled   Boolean
+  enabled2  Boolean
 }
