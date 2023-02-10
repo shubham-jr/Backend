@@ -2,7 +2,7 @@ const Prisma = require("../../../../config/helper.js");
 async function postPersonal(req, res) {
   const data = req.body;
   try {
-    const res_ = await Prisma.after_contacted.create({
+    const res_ = await Prisma.employee.create({
       data: {
         ...data,
       },

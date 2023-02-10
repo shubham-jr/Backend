@@ -4,7 +4,7 @@ async function getAllContract(req, res) {
     const apply_id= req.params.applyid;
     const job_id = req.params.jobid
     try {
-      const res_ = await Prisma.After_contacted.findUnique({
+      const res_ = await Prisma.employee.findUnique({
         where: {
           apply_id:apply_id
         },
