@@ -1,0 +1,17 @@
+model User {
+  id             String  @id @default(auto()) @map("_id") @db.ObjectId
+  email          String  @unique
+  full_name      String
+  company_name   String
+  contact_number String
+  password       String
+  country_code   String
+  checkbox       Boolean
+}
+
+model Otp {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  otp     String
+  user_id String @db.ObjectId
+}
+

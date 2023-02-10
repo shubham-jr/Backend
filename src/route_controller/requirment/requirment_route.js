@@ -46,7 +46,7 @@ requirmentRoute.put(
 );
 requirmentRoute.get('/job',getjobcontroller)
 requirmentRoute.get('/job/:jobid',getjobcontrollerById)
-requirmentRoute.get('/job/question/',getAllQuestion)
+requirmentRoute.get('/job/question/all',getAllQuestion)
 requirmentRoute.get('/job/question/:jobid',getQuestionId)
 
 module.exports = requirmentRoute;
