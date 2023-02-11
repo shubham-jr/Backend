@@ -4,7 +4,6 @@ async function connectedPost(req, res) {
     try {
       const res_ = await Prisma.connected.create({
         data: {
-            user:req.user.id,
           ...data,
         },
       });

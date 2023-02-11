@@ -146,7 +146,7 @@ model Interview {
 model Connected {
   id            String @id @default(auto()) @map("_id") @db.ObjectId
   job_id        String @db.ObjectId
-  duration      String
+  duration      String?
   duration_type String
   payroll_group String
   salary        String
