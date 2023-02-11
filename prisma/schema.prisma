@@ -147,11 +147,11 @@ model Connected {
   id            String @id @default(auto()) @map("_id") @db.ObjectId
   job_id        String @db.ObjectId
   duration      String?
-  duration_type String
-  payroll_group String
-  salary        String
-  salary_type   String
-  contract      String
+  contactDuration String
+  payroll String
+  Salary        String
+  salaryType   String
+  Contract      String
 }
 
 model Rejected {
