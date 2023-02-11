@@ -17,6 +17,9 @@ const{getAllQuestion} =require('./controller/getAllQuestion_controller')
 const{requiermentsRouterUpdate} =require('./controller/updateJob_controller')
 const{getQuestionId} =require('./controller/getQuestion_by_id_controller')
 const {getjobcontrollerById} = require("./controller/getJobById")
+const {interviewPost} = require('./controller/interview.post.controller.js')
+const {connectedPost} = require('./controller/connected.post.controller.js')
+const {rejectedPost} = require('./controller/rejected.post.controller.js')
 requirmentRoute.post("/job", auth , requirementController);
 requirmentRoute.post("/job/freetext/:id([0-9a-fA-F]{24})", auth ,freeTextController);
 requirmentRoute.post(
@@ -48,5 +51,9 @@ requirmentRoute.get('/job',getjobcontroller)
 requirmentRoute.get('/job/:jobid',getjobcontrollerById)
 requirmentRoute.get('/job/question/all',getAllQuestion)
 requirmentRoute.get('/job/question/:jobid',getQuestionId)
+
+requirmentRoute.post('/job/interview',interviewPost) 
+requirmentRoute.post('/job/connected',connectedPost)
+requirmentRoute.post('/job/rejected',rejectedPost)
 
 module.exports = requirmentRoute;

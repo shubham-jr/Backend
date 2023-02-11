@@ -39,8 +39,6 @@ model Multiple_choice {
   user_id  String?  @db.ObjectId
 }
 
-
-
 //// after apply ////
 
 model Apply {
@@ -88,4 +86,29 @@ model Multiple_choice_save {
   question_id String   @db.ObjectId
   answer      String[]
   job_id      String   @db.ObjectId
+}
+
+model Interview {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id      String @db.ObjectId
+  date        String
+  time        String
+  location    String
+}
+
+model Connected {
+  id            String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id        String @db.ObjectId
+  duration      String
+  duration_type String
+  payroll_group String
+  salary        String
+  salary_type   String
+  contract      String
+}
+
+model Rejected {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  job_id      String @db.ObjectId
+  reason       String
 }
